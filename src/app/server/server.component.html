@@ -1,0 +1,16 @@
+<div class="w-full flex flex-col items-center gap-2">
+  <input type="text" (input)="newServer($event)" class="border border-black" />
+  <p>{{ serverName }}</p>
+  <button
+    class="bg-sky-500 px-12 py-2 text-white disabled:cursor-not-allowed disabled:bg-gray-600"
+    [disabled]="allowServer"
+    (click)="activateServer()"
+  >
+    Add Server
+  </button>
+  <p>
+    Button is disabled: <span class="capitalize">{{ allowServer }}</span>
+  </p>
+  <p>The Server with ID {{ serverId }} is {{ getServerStatus() }}</p>
+  <ul class="flex flex-col"></ul>
+</div>
